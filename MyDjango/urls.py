@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.urls import path
+from booktest import views
 # 项目的urls文件
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # 配置项目
     url(r'^', include('booktest.urls')),  # 包含booktest应用中的urls文件
+    url(r'^show_books$', views.show_books),   # 显示图书信息
 ]
